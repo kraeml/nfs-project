@@ -1,0 +1,37 @@
+# NFS-Projekt
+
+## Alle
+- Netzwerkschnittstellen
+	- eth0 (vagrant Netz)
+	- eth1 (nfs-Netz) 192.168.6.0/24
+- Ubuntu 14.04 LTS
+	- Long Term Support
+	- Trusty Tahr
+- SSH Server
+	- Secure Shell (cli)
+	- X11 Forwarding
+
+## Meter
+
+- Apache JMeter
+	- sudo apt-get install jmeter
+	- Java
+- Desktopumgebung (geht auch ohne)
+	- LXDE
+	- Alternative XFCE
+	- Andere wie Gnome, KDE sind zu mächtig
+
+
+## Web
+
+- Apache Server
+	- Webseite Bilder
+	- MySQL
+	- PHP
+
+- NFS-Client
+
+## Fs
+
+- NFS-Server
+- Testbilder 10KBi
