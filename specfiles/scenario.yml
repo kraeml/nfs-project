@@ -15,6 +15,18 @@
 
 serverspec:
   - meter
+
+nfs_kernel:
+  - fs
+
+nfs_common:
+  - web
 ---
 meter:
   host:        127.0.0.1
+
+fs:
+  host:        192.168.6.4
+
+web:
+  host:         192.168.6.3

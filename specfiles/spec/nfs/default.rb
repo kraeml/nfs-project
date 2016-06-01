@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe package('nfs') do
-  it (should_be_installed)
+describe package('nfs_kernel-server') do
+  it (should be_installed)
 end

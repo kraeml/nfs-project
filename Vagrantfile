@@ -36,6 +36,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "fs" do |fs|
     fs.vm.network "private_network", ip: "192.168.6.4", virtualbox__intnet: "Gruen"
     fs.vm.hostname = "fs"
+    fs.vm.provision "shell", inline: "sudo apt-get update; sudo apt-get install -y nfs-kernel-server"
   end
 
 end
