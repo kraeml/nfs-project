@@ -24,6 +24,7 @@ Mit NFS3. Hat Limit. Evtl hat NFS4 keine.
 
 
 Alternativen:
+
     - Samba nicht wegen Win-Netz
     - GlusterFS mit Replikation - Langsam wegen Overhead https://www.gluster.org/
     + lsyncd aufsatz auf rsync Filnotificationhandler https://github.com/axkibe/lsyncd
