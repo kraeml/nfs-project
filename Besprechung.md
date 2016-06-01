@@ -31,3 +31,6 @@ Alternativen:
         mit SSH
 
     +/- zfs Partition für neues Setup
+
+Etherpad:
+https://etherpad.wikimedia.org/p/nfs-projekt
