@@ -1,0 +1,32 @@
+#
+# test_dir_top:
+#   test_dir_second_1:
+#     - ssh-access-host-or-symbol
+#     - :
+#   role_dir_second_2:
+#     - :
+#   :
+# test_dir_hierarchies:
+# :
+# ---
+# ssh-access-host-or-symbol:
+#   host: xxx.xxx.xxx.xxx
+#
+
+serverspec:
+  - meter
+
+nfs_kernel:
+  - fs
+
+nfs_common:
+  - web
+---
+meter:
+  host:        127.0.0.1
+
+fs:
+  host:        192.168.6.4
+
+web:
+  host:         192.168.6.3
