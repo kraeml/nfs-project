@@ -8,18 +8,23 @@ describe package('apache2') do
   it { should_not be_installed }
 end
 
+describe service('nfs-kernel-server') do
+  it { should be_enabled }
+  it { should be_running }
+end
+
 describe file('/var/nfs') do
   it { should be_directory }
+  it { should be_owned_by 'vagrant' }
+  it { should be_grouped_into 'vagrant' }
+  it { should be_executable.by_user('vagrant') }
+  it { should be_writable.by_user('vagrant') }
+  it { should be_readable.by_user('vagrant') }
 end
 
 describe file('/etc/exports') do
   it { should be_file }
   its(:content) { should match /^\/var\/nfs/ }
-end
-
-describe service('nfs-kernel-server') do
-  it { should be_enabled }
-  it { should be_running }
 end
 
 describe command('exportfs') do

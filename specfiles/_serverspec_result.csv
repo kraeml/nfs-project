@@ -15,15 +15,20 @@ nfs_kernel@fs(192.168.6.4),"",1
     should be installed,OK,2
 "  Package ""apache2""","",1
     should not be installed,OK,2
+"  Service ""nfs-kernel-server""","",1
+    should be enabled,OK,2
+    should be running,OK,2
 "  File ""/var/nfs""","",1
     should be directory,OK,2
+"    should be owned by ""vagrant""",OK,2
+"    should be grouped into ""vagrant""",OK,2
+    should be executable,OK,2
+    should be writable,OK,2
+    should be readable,OK,2
 "  File ""/etc/exports""","",1
     should be file,OK,2
     content,"",2
       should match /^\/var\/nfs/,OK,3
-"  Service ""nfs-kernel-server""","",1
-    should be enabled,OK,2
-    should be running,OK,2
 "  Command ""exportfs""","",1
     stdout,"",2
       should match /\/var\/nfs\s+192\.168\.6\.3/,OK,3
@@ -43,3 +48,6 @@ nfs_common@web(192.168.6.3),"",1
 "  File ""/etc/fstab""","",1
     content,"",2
       should match /^192\.168\.6\.4/,OK,3
+"  Command ""showmount -e 192.168.6.4""","",1
+    stdout,"",2
+      should match /\/var\/nfs\s+192\.168\.6\.3/,OK,3
