@@ -22,3 +22,7 @@ end
 describe file('/etc/fstab') do
   its(:content) { should match /^192\.168\.6\.4/ }
 end
+
+describe command('showmount -e 192.168.6.4') do
+    its(:stdout) { should match /\/var\/nfs\s+192\.168\.6\.3/ }
+end
