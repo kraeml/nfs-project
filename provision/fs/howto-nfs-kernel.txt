@@ -1,0 +1,20 @@
+    1  sudo vi /etc/exports
+    2  sudo exportfs -a
+    3  sudo mkdir /var/nfs
+    4  sudo exportfs -a
+    5  exit
+    6  sudo vi /etc/exports
+    7  sudo exportfs -ra
+    8  exit
+    9  sudo service nfs-kernel-server status
+   10  sudo service nfs-kernel-server start
+   11  exit
+   12  showmount -e localhost
+   13  showmount -ea localhost
+   14  showmount -a localhost
+   15  showmount -d localhost
+   16  showmount -e localhost
+   17  exit
+   18  history
+   19  exit
+   20  sudo chown vagrant: /var/nfs

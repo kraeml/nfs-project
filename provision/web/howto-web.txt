@@ -1,0 +1,11 @@
+    1  showmount -e 192.168.6.4
+    2  sudo showmount -e 192.168.6.4
+    3  exit
+    4  showmount -e 192.168.6.4
+    5  exit
+    6  showmount -e 192.168.6.4
+    7  exit
+    8  showmount -e 192.168.6.4
+    9  exit
+   10  history > howto-web.txt
+vi /etc/fstab

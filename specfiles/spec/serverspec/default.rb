@@ -19,3 +19,16 @@ gem_packages.each do |paket|
     it { should be_installed.by('gem') }
   end
 end
+
+describe package('lxde') do
+  it { should be_installed }
+end
+
+describe service('lxdm') do
+  it { should be_enabled }
+  it { should be_running }
+end
+
+describe package('jmeter') do
+  it { should be_installed }
+end

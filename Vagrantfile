@@ -19,9 +19,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "meter" do |meter|
     meter.vm.network "private_network", ip: "192.168.2.3"
     meter.vm.network "private_network", ip: "192.168.6.2", virtualbox__intnet: "Gruen"
-    meter.vm.provision "shell", inline: "sudo apt-add-repository -y ppa:brightbox/ruby-ng; sudo apt-get update; sudo apt-get -y install ruby2.3 ruby2.3-dev rake"
+    meter.vm.provision "shell", inline: "sudo apt-add-repository -y ppa:brightbox/ruby-ng; sudo apt-get update; sudo apt-get -y install ruby2.3 ruby2.3-dev rake lxde jmeter"
     meter.vm.provision "shell", inline: "sudo gem install serverspec serverspec-runner"
-    # meter.vm.provision "shell", inline: "sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11"
+    meter.vm.provision "shell", inline: "sudo service lxdm start"
     meter.vm.hostname = "meter"
     meter.vm.provider "virtualbox" do |v|
       v.gui = true
@@ -37,6 +37,10 @@ Vagrant.configure("2") do |config|
     fs.vm.network "private_network", ip: "192.168.6.4", virtualbox__intnet: "Gruen"
     fs.vm.hostname = "fs"
     fs.vm.provision "shell", inline: "sudo apt-get update; sudo apt-get install -y nfs-kernel-server"
+    fs.vm.provision "shell", inline: "sudo cp /vagrant/provision/fs/etc/exports /etc/exports"
+    fs.vm.provision "shell", inline: "sudo mkdir /var/nfs"
+    fs.vm.provision "shell", inline: "sudo chown vagrant: /var/nfs"
+    fs.vm.provision "shell", inline: "sudo exportfs -ra"
   end
 
 end
