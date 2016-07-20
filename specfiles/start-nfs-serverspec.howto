@@ -1,0 +1,9 @@
+cd /vagrant/specfiles/
+ssh-keygen
+ssh-copy-id 192.168.6.4
+ssh-copy-id 192.168.6.3
+ssh-agent bash
+ssh-add
+serverspec-runner
+history >> start-nfs-serverspec.howto
+vi start-nfs-serverspec.howto
